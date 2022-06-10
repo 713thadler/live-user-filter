@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: #2c3e50;
+  background-color: #f8f9fd;
+  font-family: 'Roboto', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,58 +15,80 @@ body {
   margin: 0;
 }
 
-.kinetic {
-  position: relative;
-  height: 80px;
-  width: 80px;
+.container {
+  border-radius: 5px;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
 }
 
-.kinetic::after,
-.kinetic::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 0;
-  border: 50px solid transparent;
-  border-bottom-color: #fff;
-  animation: rotateA 2s linear infinite 0.5s;
+.title {
+  margin: 0;
 }
 
-.kinetic::before {
-  transform: rotate(90deg);
-  animation: rotateB 2s linear infinite;
+.subtitle {
+  display: inline-block;
+  margin: 5px 0 20px;
+  opacity: 0.8;
 }
 
-@keyframes rotateA {
-  0%,
-  25% {
-    transform: rotate(0deg);
-  }
-
-  50%,
-  75% {
-    transform: rotate(180deg);
-  }
-
-  100% {
-    transform: rotate(360deg);
-  }
+.header {
+  background-color: #3e57db;
+  color: #fff;
+  padding: 30px 20px;
 }
 
-@keyframes rotateB {
-  0%,
-  25% {
-    transform: rotate(90deg);
-  }
+.header input {
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 0;
+  border-radius: 50px;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 15px;
+  width: 100%;
+}
 
-  50%,
-  75% {
-    transform: rotate(270deg);
-  }
+.header input:focus {
+  outline: none;
+}
 
-  100% {
-    transform: rotate(450deg);
-  }
+.user-list {
+  background-color: #fff;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.user-list li {
+  display: flex;
+  padding: 20px;
+}
+
+.user-list img {
+  border-radius: 50%;
+  object-fit: cover;
+  height: 50px;
+  width: 50px;
+}
+
+.user-list .user-info {
+  margin-left: 10px;
+}
+
+.user-list .user-info h4 {
+  margin: 0 0 10px;
+}
+
+.user-list .user-info p {
+  font-size: 12px;
+}
+
+.user-list li:not(:last-of-type) {
+  border-bottom: 1px solid #eee;
+}
+
+.user-list li.hide {
+  display: none;
 }
